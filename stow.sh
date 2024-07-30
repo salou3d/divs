@@ -16,7 +16,7 @@ mkdir -p ~/.local/share/applications
 mkdir ~/.config
 
 stow -d $SODIR/Apps/so-config/stow -t $HOME --dotfiles \
-  alacritty aria2 bat broot btop coranviewer dunst dust eww fuzzel \ gammastep hypr i3status-rust ironbar labwc lsd micro mpv nano navi \ qt6ct rofi sfwbar starship.toml sway swayidle swaylock swaync swayosd \ wallust waybar wleave wob yazi ytcc zoxide \
+  alacritty aria2 bat broot btop coranviewer dunst dust eww fuzzel \ gammastep hypr i3status-rust ironbar labwc lsd micro mpv nano navi \ qt6ct rofi sfwbar starship.toml sway swayidle swaylock swaync swayosd \ wallust waybar wleave wob yazi ytcc \
   vdhcoapp fonts themes icons
 
 
