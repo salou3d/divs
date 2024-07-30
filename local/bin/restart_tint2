@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pkill tint2
+
+tint2 -c ~/.config/tint2/top.tint2rc &
+#tint2 -c ~/.config/tint2/dock.tint2rc &

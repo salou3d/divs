@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' \
+
+youtube-dl --add-metadata -x --audio-format "mp3" --audio-quality 0 \
+    --external-downloader aria2c \
+    --external-downloader-args '-j 5 -x 8 -s 8 -k 1M' \
+    --yes-playlist --windows-filenames \
+    -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' \
+    "$@" 

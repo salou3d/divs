@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+yt-dlp --add-metadata -x --audio-format "mp3" --audio-quality 0 -o '%(title)s.%(ext)s' "$@"

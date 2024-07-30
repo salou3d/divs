@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+get_today_weather() {
+    yd=`date -I --date='yesterday'`
+    yt=`date -I`
+    city=`echo "$1" | awk '{tolower($0); print}'`
+    ydmfname="$HOME/Documents/weather/$yd-$city.txt"
+    ytmfname="$HOME/Documents/weather/$yt-$city.txt"
+
+    cmd_weather="curl -4 http://wttr.in/$city --output-dir $HOME/Documents/weather --create-dirs -o $yt-$city.txt"
+
+    if [ -f "$ydmfname" ]; then
+        7z a "$HOME/Documents/weather/$city.7z" "$ydmfname"
+        rm "$ydmfname"
+    fi
+    if [ -f "$ytmfname" ]; then
+        cat "$ytmfname"
+    else
+        `echo "$cmd_weather"`
+        cat "$ytmfname"
+    fi
+}
+
+if [ "$1" = "" ]; then
+    printf "[!] One argument should be provided\n    Please give the name of the city to show its weather\n    Example:\n    weather tangier\n"
+    exit
+fi
+
+get_today_weather $1

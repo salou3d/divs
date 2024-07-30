@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo ""
+
+i="import requests, bs4
+res = requests.get('https://www.habous.gov.ma/', verify='habous-gov-ma-chain.pem')
+bs = bs4.BeautifulSoup(res.text, features='html5lib')
+divd = bs.find('div', class_='col-md-3 col-sm-3 col-xs-12 date nopadding')
+print(divd.getText())"
+
+python3 -c "$i"
+
+echo ""
+

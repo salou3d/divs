@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# bestvideo[height<=?480]+bestaudio/best
+
+yt-dlp \
+    --external-downloader aria2c \
+    --external-downloader-args '-j 8 -x 8 -s 8 -k 5M' \
+    -f 'bestvideo[height<=?480]+bestaudio/best' \
+    --write-sub --sub-lang 'en,fr' \
+    -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' \
+    "$@"

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# bestvideo[height<=?480]+bestaudio/best
+
+if [ "$1" != "480" -a "$1" != "720" -a "$1" != "1080" ]; then
+	echo "usage: $0 480|7200|1080 video_url"
+	exit 1
+fi
+
+echo "Video quality: $1"
+margs=""
+for i in $@; do
+    if [ "$i" != "$1" ]; then
+        margs+=" $i"
+    fi
+done
+
+yt-dlp -f "bestvideo[height<=?$1]+bestaudio/best" -o '%(title)s.%(ext)s' $margs
