@@ -92,12 +92,10 @@ def open_channel_2():
         print(f'Wrong input not in range [1, {len( yt_channels )}]')
 
 def open_channel():
-    # system( '''ytccf.sh -w -u -p "$(ytcc subscriptions -a name | awk '{$1=$1};1' | fzf +m)"''' )
-    channels = ""
-    for c in yt_channels:
-        channels += c + "\n"
+    system( '''ytccf.sh -w -u -p "$(ytcc subscriptions -a name | awk '{$1=$1};1' | tail -n +3 | fzf +m)"''' )
 
-    system( '''ytccf.sh -w -u -p "$(echo \"{}\" | fzf +m)"'''.format(channels) )
+def unwatched():
+    system( '''ytccf.sh -u''' )
 
 
 def mark_all_watched():
