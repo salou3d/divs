@@ -43,8 +43,8 @@ sudo zypper in labwc hyprland sway \
 	patterns-kde-kde_plasma polkit-kde-agent-6 kde-cli-tools6 \
 	systemsettings6 kdialog plasma6-systemmonitor kdeconnect-kde \
 	dolphin konsole okular gwenview ark kate partitionmanager filelight spectacle ghostwriter \
-	podman meson starship micro-editor wf-shell \
-	wayland-protocols-devel
+	sl podman meson starship micro-editor wf-shell \
+	wayland-protocols-devel java-22-openjdk
 
 
 
