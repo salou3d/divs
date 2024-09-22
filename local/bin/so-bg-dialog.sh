@@ -3,7 +3,7 @@
 # Background / Wallpaper chooser
 
 BG_DIR="$HOME/.config"
-BG_FILE="$HOME/./wallpaper"
+BG_FILE="$HOME/.wallpaper"
 
 my_color="#4d4d4d"
 so_bg_setter="swaybg "

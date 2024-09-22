@@ -49,6 +49,6 @@ if ! pgrep wl-paste; then
     wl-clipboard-history -t &
 fi
 
-if ! pgrep hypridle; then
-    hypridle &
+if ! pgrep swayidle; then
+    swayidle -w &
 fi
