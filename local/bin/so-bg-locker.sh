@@ -12,7 +12,13 @@ if type swaylock > /dev/null; then
         touch "$locker_conf"
     fi
 
-    awk -i inplace -F'=' -v wallp="$1" -v val="$2" '{ if ($1 == wallp) print $1 "=\"" val "\""; else print $0; }' "$locker_conf"
+    blurwall="$(xdg-user-dir PICTURES)/blured-wallpaper"
+
+    if [ ! -f "$blurwall" ]; then
+        magick "$2" -blur "50x30" "$blurwall"
+    fi
+
+    awk -i inplace -F'=' -v wallp="$1" -v val="$blurwall" '{ if ($1 == wallp) print $1 "=\"" val "\""; else print $0; }' "$locker_conf"
 fi
 
 if  type hyprlock > /dev/null; then
@@ -22,8 +28,10 @@ if  type hyprlock > /dev/null; then
     if [ ! -d "$locker_dir" ]; then
         mkdir -p "$locker_dir"
         touch "$locker_conf"
+        exit 1
     elif [ -d "$locker_dir" -a ! -f "$locker_conf" ]; then
         touch "$locker_conf"
+        exit 2
     fi
 
     mfield="path"

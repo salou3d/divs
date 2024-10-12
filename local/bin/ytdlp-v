@@ -2,16 +2,18 @@
 
 # bestvideo[height<=?480]+bestaudio/best
 
-if [ "$1" != "480" -a "$1" != "720" -a "$1" != "1080" ]; then
-	echo "usage: $0 480|7200|1080 video_url"
+if [ $# -lt 2 ] || [ "$1" != "480" -a "$1" != "720" -a "$1" != "1080" ]
+then
+    echo "usage: $0 480|7200|1080 [yt-dlp options] urls"
 	exit 1
 fi
 
 echo "Video quality: $1"
+# echo "Video url: $2"
 margs=""
 for i in $@; do
     if [ "$i" != "$1" ]; then
-        margs+=" $i"
+        margs="$margs $i"
     fi
 done
 

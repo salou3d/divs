@@ -21,14 +21,20 @@ function set_bg() {
 
 }
 
-image=$(fd -tf --absolute-path --base-directory "$basedir" | fzf --preview 'fzf-preview.sh {}')
+if [ $# -eq 0 ]; then
+    echo "This script is designed to run with WAYPAPER GUI, to apply tinted-theming from the selected wallpaper."
+    echo "You can still use it the following way:"
+    echo "USAGE: $0 /path/to/image"
+
+    exit 1
+fi
+
+image="$1"
 
 if [ -f "$image" ]; then
-#     tintyname=$(echo $image | awk '{l=split($0, A, /\//); gsub(/[\. ]/, "-", A[l]); print A[l] }')
+    tintyname=$(echo $image | awk '{l=split($0, A, /\//); gsub(/[\. ]/, "-", A[l]); print A[l] }')
 
-    tintyname=$(basename $image | awk '{ gsub(/[\. ]/, "-"); print }')
-
-#     image="$basedir/$image"
+    #image="$basedir/$image"
 
 #     echo "image: $image"
 #     echo "tintyname: $tintyname"
