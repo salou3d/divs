@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 set -euo pipefail
 
-wl-clipboard-history -p "$(wl-clipboard-history -l 20 | fzf --no-multi-line --with-nth 2.. -d , | cut -d ',' -f1)"
+wl-clipboard-history -p "$(wl-clipboard-history -l 20 | fzf --no-multi-line --with-nth 2.. -d , --preview 'echo {2}' --preview-window=down,50% | cut -d ',' -f1)" | wl-copy

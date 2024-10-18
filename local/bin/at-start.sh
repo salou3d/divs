@@ -68,4 +68,8 @@ fi
 
 if ! pgrep -f gammastep-indicator && command -v gammastep-indicator >/dev/null 2>&1; then
     gammastep-indicator &
+    sleep 1
+    if ! pgrep -f gammastep-indicator; then
+        gammastep &
+    fi
 fi

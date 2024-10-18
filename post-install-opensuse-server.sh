@@ -16,17 +16,17 @@
 # walker: gtk4-layer-shell: vala gtk-doc
 # fabric widgets: gobject-introspection gobject-introspection-devel python311-loguru python311-devel librsvg-devel webkit2gtk3-devel typelib-1_0-DbusmenuGtk3-0_4 typelib-1_0-Dbusmenu-0_4
 # anyrun:
+# onagre:
 # sweep-rs/chronicler:
 # cthulock llvm18-devel clang18-devel pam-devel
+# wf-recorder/wl-screenrec: ffmpeg-7-libavformat-devel ffmpeg-7-libavutil-devel ffmpeg-7-libavcodec-devel ffmpeg-7-libavfilter-devel ffmpeg-7-libavdevice-devel libpulse-devel pipewire-devel
 
 # OpenCL: intel-opencl
 # Aswaita for python: typelib-1_0-Graphene-1_0 typelib-1_0-Gtk-4_0 libadwaita-1-0 libadwaita-lang libadwaita-devel
 # ironbar: libluajit-5_1-2
 
 ### precompiled from github:
-# flavours, tinty, matugen, base16-builder-go, rgr, satty, tinted-builder-rust,
-# ddh, hck, ianny, ouch, ox, rga, rsftch, rustic, suchit, fselect, app, scout
-# htmlq, xh, walker, rust-analyzer, lemminx-linux, vivid, nomino
+# flavours, tinty, matugen, base16-builder-go, rgr, satty, tinted-builder-rust, ddh, hck, ianny, ouch, ox, rga, rsftch, rustic, suchit, fselect, app, scout, htmlq, xh, walker, rust-analyzer, lemminx-linux, vivid, nomino
 
 ### different way of installation
 # nwg-wrapper: git clone
@@ -36,10 +36,12 @@
 #	then uninstall podman with zypper
 
 sudo zypper in zp labwc hyprland patterns-sway-sway weston \
-    rofi-wayland libnotify-tools SwayNotificationCenter waycheck \
-	wob wev lswt wtype wlrctl brightnessctl grim slurp wayshot waysip \
-	kanshi gammastep gammastep-indicator wlr-randr wlopm wl-clipboard \
-	swaybg swayidle swaylock xdg-desktop-portal-wlr \
+    pop-launcher rofi-wayland wob \
+    libnotify-tools SwayNotificationCenter waycheck \
+	wev lswt wtype wlrctl wl-clipboard \
+	grim slurp wayshot waysip \
+	kanshi wlr-randr wlopm brightnessctl gammastep gammastep-indicator \
+	swaybg swayidle swaylock swayimg imv libfreeimage3 xdg-desktop-portal-wlr \
 	hypridle hyprlock hyprpicker hyprshot hyprland-bash-completion xdg-desktop-portal-hyprland \
 	swayidle-bash-completion swaylock-bash-completion wl-clipboard-bash-completion \
 	starship lsd bat bat-extras fd sd igrep ripgrep zoxide mcfly dust dysk tealdeer jless entr \
@@ -52,7 +54,7 @@ sudo zypper in zp labwc hyprland patterns-sway-sway weston \
 	python311-html5lib python311-beautifulsoup4 python311-PyQt6 \
 	python311-python-lsp-server \
 	pavucontrol playerctl mpv libopenh264-7 \
-	flatpak opi poppler-tools xdg-user-dirs \
+	flatpak opi poppler-tools xdg-user-dirs qalculate \
 	clamav java-22-openjdk sl podman meson micro-editor helix lapce \
 	gparted bleachbit sqlitebrowser NetworkManager-applet
  \
@@ -62,21 +64,20 @@ sudo zypper in zp labwc hyprland patterns-sway-sway weston \
 
 
 
-sudo opi -P sfwbar
+# sudo opi -P sfwbar
 
-pipx install fabric gallery-dl waypaper wpgtk ytcc
+pipx install cute-sway-recorder fabric gallery-dl waypaper wpgtk ytcc
 
-cargo install amp mprocs navi rebos runiq rustlings rusti-cal toipe trashy wayout xcp
+cargo install amp mprocs navi rebos runiq rustlings rusti-cal toipe trashy wayout wl-screenrec xcp
 
 flatpak install -u org.mozilla.firefox \
 	org.mozilla.Thunderbird \
 	org.videolan.VLC \
 	io.github.hakuneko.HakuNeko \
 	org.kde.falkon \
-	org.kde.kcalc \
 	org.kde.ktorrent \
 	org.kde.vvave
-
+# 	org.kde.kcalc
 
 
 # sudo zypper addrepo --refresh   https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed   snappy
