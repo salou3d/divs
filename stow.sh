@@ -16,7 +16,13 @@ mkdir -p ~/.local/share/applications
 mkdir ~/.config
 
 stow -d $SODIR/Apps/so-config/stow -t $HOME --dotfiles \
-  alacritty aria2 bat broot btop coranviewer dunst dust eww fuzzel \ gammastep hypr i3status-rust ironbar labwc lsd micro mpv nano navi \ profile qt6ct rofi sfwbar starship.toml sway swayidle swaylock swaync swayosd \ wallust waybar wleave wob yazi ytcc \
+  alacritty amp anyrun app aria2 bat bottom broot btop coranviewer dunst dust \
+  eget eww fastfetch flavours fselect fuzzel gammastep handlr helix hypr \
+  i3status-rust imv ianny ironbar jay kitty labwc lsd macchina micro mpv nano \
+  navi nwg-wrapper onagre procs profile qt6ct rebos ripgrep-app rofi rsfetch \
+  satty scout sfwbar sk starship sway swayidle swayimg swaylock swaync swayosd \
+  tinted-theming walker wallust waybar wayfire waypaper weathercrab wleave \
+  wlogout wob wofi wpaperd yazi ytcc \
   vdhcoapp fonts themes icons
 
 

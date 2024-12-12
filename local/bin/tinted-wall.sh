@@ -28,34 +28,37 @@ if [ -f "$image" ]; then
 
     tintyname=$(basename $image | awk '{ gsub(/[\. ]/, "-"); print }')
 
-#     image="$basedir/$image"
-
-#     echo "image: $image"
-#     echo "tintyname: $tintyname"
-
-    #echo "$image" > .wallpaper
     rm "$currwall"
     cp "$image" "$currwall"
 
     set_bg "$image"
 
-    tinty generate-scheme --name $tintyname --slug $tintyname --system base16 --variant dark --save  $image
+    base_sys="base16"
+    if [ ! -z "$1" -a "$1" == "base24" ]; then
+        base_sys="$1"
+    fi
 
-    tinty apply base16-$tintyname
+    tinty generate-scheme --name $tintyname --slug $tintyname --system $base_sys --variant dark --save  $image
+
+    tinty apply "$base_sys-$tintyname"
 
     # for apps that I couldn't theme with tinty
     flavours apply base16-flavours-colors-file
 
     accentcolor=$(grep base0E ~/.local/share/tinted-theming/tinty/custom-schemes/base16/$tintyname.yaml | awk '{print $2}' | sd "'" "")
 
-    plasma-apply-colorscheme -a "#$accentcolor" BreezeDark
-    plasma-apply-lookandfeel -a org.kde.breezedark.desktop
+#     plasma-apply-colorscheme -a "#$accentcolor" BreezeDark
+#     plasma-apply-lookandfeel -a org.kde.breezedark.desktop
+
+#     gsettings set org.gnome.desktop.interface accent-color "#$accentcolor"
 
     magick "$image" -blur "50x30" "$blurwall"
 
     so-bg-locker.sh "image" "$currwall"
 
 #     echo "window { background: url('$blurwall'); background-size: cover;}" > ~/.config/wleave/background.css
+
+    exit 0
 
 else
     exit 1

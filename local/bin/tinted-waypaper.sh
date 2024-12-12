@@ -57,6 +57,8 @@ if [ -f "$image" ]; then
     plasma-apply-colorscheme -a "#$accentcolor" BreezeDark
     plasma-apply-lookandfeel -a org.kde.breezedark.desktop
 
+#     gsettings set org.gnome.desktop.interface accent-color "#$accentcolor"
+
     magick "$image" -blur "50x30" "$blurwall"
 
     so-bg-locker.sh "image" "$currwall"
