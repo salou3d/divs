@@ -15,10 +15,11 @@ mkdir -p  ~/.local/bin
 mkdir -p ~/.local/share/applications
 mkdir ~/.config
 
-stow -d $SODIR/Apps/so-config/stow -t $HOME --dotfiles \
+stow -d $HOME/Documents/so-config/stow -t $HOME --dotfiles \
   alacritty amp anyrun app aria2 bat bottom broot btop coranviewer dunst dust \
-  eget eww fastfetch flavours fselect fuzzel gammastep handlr helix hypr \
-  i3status-rust imv ianny ironbar jay kitty labwc lsd macchina micro mpv nano \
+  eget eww fastfetch felix flavours fselect fuzzel gammastep handlr helix hypr \
+  hyprlauncher hyprwall \
+  i3status-rust imv ianny ironbar jay kitty labwc lsd macchina matugen micro mpv nano \
   navi nwg-wrapper onagre procs profile qt6ct rebos ripgrep-app rofi rsfetch \
   satty scout sfwbar sk starship sway swayidle swayimg swaylock swaync swayosd \
   tinted-theming walker wallust waybar wayfire waypaper weathercrab wleave \
@@ -26,11 +27,11 @@ stow -d $SODIR/Apps/so-config/stow -t $HOME --dotfiles \
   vdhcoapp fonts themes icons
 
 
-for i in $SODIR/Apps/so-config/divs/local/bin/*; do
+for i in $HOME/Documents/so-config/divs/local/bin/*; do
   ln -s "$i" ~/.local/bin/
 done
 
-for i in $SODIR/Apps/so-config/divs/local/share/applications/*; do
+for i in $HOME/Documents/so-config/divs/local/share/applications/*; do
   ln -s "$i" ~/.local/share/applications/
 done
 

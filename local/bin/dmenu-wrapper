@@ -3,7 +3,7 @@ set -euo pipefail
 
 
 if [ "$1" = "select" ]; then
-    wl-clipboard-history -l 20 | rofi -dmenu | cut -d ',' -f2- | wl-copy
+    wl-clipboard-history -l 20 | rofi -config ~/.config/rofi/config-clipboard.rasi -dmenu | cut -d ',' -f2- | wl-copy
 elif [ "$1" = "delete" ]; then
     sqlite3 $HOME/.clipboard.sqlite "DELETE FROM c WHERE id = $(wl-clipboard-history -l 20 | rofi -dmenu | cut -d ',' -f1)"
 fi

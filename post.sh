@@ -24,10 +24,10 @@ mkdir ~/.config
 ln -s $SODIR/Apps/so-config/icons ~/.icons
 ln -s $SODIR/Apps/so-config/themes ~/.themes
 ln -s $SODIR/Apps/so-config/fonts ~/.fonts
-ln -s -T $SODIR/Apps/so-config/xdman ~/.xdman
-ln -s $SODIR/Apps/var-flatpaks ~/.var
-ln -s ~/.var/app/org.mozilla.Thunderbird/.thunderbird ~/.thunderbird
-ln -s ~/.var/app/org.mozilla.firefox/.mozilla ~/.mozilla
+# ln -s -T $SODIR/Apps/so-config/xdman ~/.xdman
+# ln -s $SODIR/Apps/var-flatpaks ~/.var
+# ln -s ~/.var/app/org.mozilla.Thunderbird/.thunderbird ~/.thunderbird
+# ln -s ~/.var/app/org.mozilla.firefox/.mozilla ~/.mozilla
 ln -s $SODIR/SDisque/Disque-S/Documents/xdman ~/Downloads
 
 ln -s $SODIR/Apps/so-config/icons ~/.local/share/icons

@@ -27,23 +27,25 @@ if ! systemctl --user is-active flatpak-portal.service; then
     systemctl --user restart flatpak-portal.service
 fi
 
-if ! pgrep -f /usr/libexec/polkit-kde-authentication-agent-1; then
-    /usr/libexec/polkit-kde-authentication-agent-1 &
+if ! pgrep -f polkit-kde-authentication-agent-1; then
+    if [ -f /usr/libexec/polkit-kde-authentication-agent-1 ]; then
+        /usr/libexec/polkit-kde-authentication-agent-1 &
+    elif [ -f /usr/lib/polkit-kde-authentication-agent-1 ]; then
+        /usr/lib/polkit-kde-authentication-agent-1 &
+    else
+        lxqt-policykit-agent &
+    fi
 fi
 
 # /usr/libexec/geoclue-2.0/demos/agent &
 # /usr/libexec/geoclue-2.0/demos/where-am-i -a 4
-
-# if ! pgrep gmenudbusmenuproxy; then
-#     gmenudbusmenuproxy &
-# fi
 
 if ! pgrep xsettingsd; then
     xsettingsd &
 fi
 
 if ! pgrep swayosd-server; then
-    swayosd-server &
+    swayosd-server -s ~/.config/swayosd/style.css &
 fi
 
 if ! pgrep playerctld; then
