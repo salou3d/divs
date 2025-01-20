@@ -15,7 +15,9 @@ mkdir -p  ~/.local/bin
 mkdir -p ~/.local/share/applications
 mkdir ~/.config
 
-stow -d $HOME/Documents/so-config/stow -t $HOME --dotfiles \
+cd $HOME/so-config/stow
+
+stow -d $HOME/so-config/stow -t $HOME --dotfiles \
   alacritty amp anyrun app aria2 bat bottom broot btop coranviewer dunst dust \
   eget eww fastfetch felix flavours fselect fuzzel gammastep handlr helix hypr \
   hyprlauncher hyprwall \
@@ -27,11 +29,11 @@ stow -d $HOME/Documents/so-config/stow -t $HOME --dotfiles \
   vdhcoapp fonts themes icons
 
 
-for i in $HOME/Documents/so-config/divs/local/bin/*; do
+for i in $HOME/so-config/divs/local/bin/*; do
   ln -s "$i" ~/.local/bin/
 done
 
-for i in $HOME/Documents/so-config/divs/local/share/applications/*; do
+for i in $HOME/so-config/divs/local/share/applications/*; do
   ln -s "$i" ~/.local/share/applications/
 done
 

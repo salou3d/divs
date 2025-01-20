@@ -33,18 +33,16 @@
 # then uninstall podman with package manager
 
 ### AppImages:
-# LibreOffice
-# Zen browser
-
 
 ### Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # navi depends on fzf (auto installed)
-brew install bat bottom broot csvlens diskus dua-cli dust dysk fd fselect fzf \
+brew install bat bottom broot cfonts csvlens diskus dua-cli dust dysk fd figlet fselect fzf \
 	git-delta gping grex helix howdoi hyperfine jaq jless jnv lsd macchina mcfly \
-	mprocs navi onefetch ouch pastel procs ripgrep rga rust-analyzer rust-parallel \
-	sd starship tealdeer tokei trippy vivid yazi zoxide \
+	mprocs navi onefetch ouch pastel procs qsv riff ripgrep rga rust-analyzer rust-parallel \
+	sd starship tealdeer toilet tokei trippy vivid yazi zellij zoxide \
+	glow charmbracelet/tap/mods \
 	bash-language-server python-lsp-server shellcheck vscode-langservers-extracted
 	# micro
 	## Tap: diskonaut hck tinted-builder-rust tinty scout
@@ -62,27 +60,37 @@ cargo install anyrun felix gengir rebos runiq rusti-cal rustlings toipe \
 
 ### Flatpaks
 flatpak install -u \
+	app.zen_browser.zen \
 	org.kde.ark \
 	org.kde.elisa \
 	org.kde.falkon \
 	org.kde.filelight \
 	org.kde.gwenview \
 	org.kde.ghostwriter \
+	org.kde.isoimagewriter \
 	org.kde.kate \
+	org.kde.kdenlive \
+	org.kde.klevernotes \
+	org.kde.krita \
 	org.kde.ktorrent \
+	org.kde.kwordquiz \
 	org.kde.KStyle.Kvantum \
 	org.kde.okular \
+	org.libreoffice.LibreOffice \
 	org.mozilla.firefox \
-	org.mozilla.Thunderbird
-	# io.github.zen_browser.zen
+	org.mozilla.Thunderbird \
+	page.codeberg.Imaginer.Imaginer
 	# org.videolan.VLC
 	# org.kde.akregator
-	# org.kde.klevernotes
+	# org.kde.kcalc
+	# org.kde.kget
+	# org.kde.kwalletmanager5
 	# org.kde.marknote
 	# org.qownnotes.QOwnNotes
-	# org.kde.kcalc
-	# org.kde.marknote
 	# br.eng.silas.qpdftools
 	# io.github.amit9838.mousam
+	# io.github.giantpinkrobots.flatsweep
 	# io.github.giantpinkrobots.varia
+	# com.github.ryonakano.reco ## Audio recorder
+	# com.cuperino.qprompt
 

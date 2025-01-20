@@ -18,7 +18,7 @@ cpwd="$PWD"
 cd ~/Downloads/eget-downs
 
 function update_appimages() {
-    mv -fv *.AppImage* /media/Apps/appimages/
+    mv -fv *.AppImage* ~/Apps/appimages/
 }
 
 function update_eget() {
